@@ -1,27 +1,36 @@
-import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import Collections from './pages/Collections'
+import Mens from './pages/Mens'
+import Womens from './pages/Womens'
+import Luxury from './pages/Luxury'
+import Craftsmanship from './pages/Craftsmanship'
+import Journal from './pages/Journal'
+import Sustainability from './pages/Sustainability'
+import Stores from './pages/Stores'
+import Support from './pages/Support'
+import Contact from './pages/Contact'
+import Product from './pages/Product'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/collections" element={<Collections />} />
+        <Route path="/mens" element={<Mens />} />
+        <Route path="/womens" element={<Womens />} />
+        <Route path="/luxury" element={<Luxury />} />
+        <Route path="/craftsmanship" element={<Craftsmanship />} />
+        <Route path="/journal" element={<Journal />} />
+        <Route path="/sustainability" element={<Sustainability />} />
+        <Route path="/stores" element={<Stores />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/product/:id" element={<Product />} />
+      </Routes>
+    </Layout>
   )
 }
 
